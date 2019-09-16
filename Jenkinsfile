@@ -15,7 +15,7 @@ git credentialsId: 'fb9baf09-ae79-45be-8ee2-2109f9627c7b', url: 'https://github.
    }
    stage('Code Quality') {
      withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
-     sh 'mvn sonar:sonar \
+     sh mvn sonar:sonar \
         -Dsonar.projectKey=article370-maven \
         -Dsonar.organization=Hareesh6666 \
         -Dsonar.host.url=https://sonarcloud.io \
