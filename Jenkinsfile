@@ -7,9 +7,9 @@ node {
     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.0') {
      sh 'mvn clean compile'
   mvn sonar:sonar \
-  -Dsonar.projectKey=hareesh66666 \
-  -Dsonar.organization=hareesh66666 \
-  -Dsonar.host.url=https://sonarcloud.io/organizations/hareesh66666 \
+  -Dsonar.projectKey=Hareesh6666 \
+  -Dsonar.organization=Hareesh6666 \
+  -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=2419a7774f0ee749c84ed158a4ec7ce1bd2e2b3c
      } 
    }
