@@ -9,7 +9,7 @@ node {
   mvn sonar:sonar \
   -Dsonar.projectKey=hareesh66666 \
   -Dsonar.organization=hareesh66666 \
-  -Dsonar.host.url=https://sonarcloud.io/organizations/hareesh66666/projects \
+  -Dsonar.host.url=https://sonarcloud.io/organizations/hareesh66666 \
   -Dsonar.login=2419a7774f0ee749c84ed158a4ec7ce1bd2e2b3c
      } 
    }
