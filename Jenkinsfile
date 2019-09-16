@@ -6,11 +6,11 @@ node {
    stage('Build') {
     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.0') {
      sh 'mvn clean compile'
-       mvn sonar:sonar \
-  -Dsonar.projectKey=Hareesh6666 \
-  -Dsonar.organization=hareesh6666 \
+  mvn sonar:sonar \
+  -Dsonar.projectKey=hareesh66666 \
+  -Dsonar.organization=hareesh66666 \
   -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=bc03a466b583f876ad6a4505c6988f357ebf10ed
+  -Dsonar.login=2419a7774f0ee749c84ed158a4ec7ce1bd2e2b3c
      } 
    }
    stage('UnitTest run') {
