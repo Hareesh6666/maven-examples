@@ -1,38 +1,21 @@
-node {
-   
-   stage('Code Checkout') { // for display purposes
-git credentialsId: 'fb9baf09-ae79-45be-8ee2-2109f9627c7b', url: 'https://github.com/Hareesh6666/maven-examples.git'
+// Example of Jenkins pipeline script
+
+pipeline {
+  stages {
+    stage("Build") {
+       steps {
+          // Just print a Hello, Pipeline to the console
+          echo "Hello, Pipeline!"
+          // Compile a Java file. This requires JDKconfiguration from Jenkins
+          javac HelloWorld.java
+          // Execute the compiled Java binary called HelloWorld. This requires JDK configuration from Jenkins
+          java HelloWorld
+          // Executes the Apache Maven commands, clean then package. This requires Apache Maven configuration from Jenkins
+          mvn clean package ./HelloPackage
+          // List the files in current directory path by executing a default shell command
+          sh "ls -ltr"
+       }
    }
-   stage('Build') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.3') {
-     sh 'mvn clean compile'
-     } 
-   }
-   stage('UnitTest run') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.3') {
-     sh 'mvn test'
-     }   
-   }
-   stage('Code Quality') {
-     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.3') {
-     sh 'mvn sonar:sonar \
-  -Dsonar.projectKey=hareesh66666 \
-  -Dsonar.organization=hareesh66666 \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=5f77d28913802ad3dd9e9b8f0b59eaa481c76c5b'
-     }    
-      
-   }
-   stage('Archival repo') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.3') {
-     sh 'mvn package'
-     }   
-   }
-   stage('Docker Build') {
-      
-   }
-   stage('Deploy to Prod') {
-      
-   }
-   
-}
+   // And next stages if you want to define further...
+ } // End of stages
+} // End of pipeline
