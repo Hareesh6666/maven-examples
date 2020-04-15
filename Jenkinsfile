@@ -4,7 +4,7 @@ node {
 git 'https://github.com/Hareesh6666/maven-examples.git'
    }
    stage('Build') {
-    withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.3') {
+    withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.0') {
      sh 'mvn clean compile'
      } 
    }
