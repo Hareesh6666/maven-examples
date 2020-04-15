@@ -4,17 +4,17 @@ node {
 git 'https://github.com/Hareesh6666/maven-examples.git'
    }
    stage('Build') {
-    withMaven(jdk: 'JDK', maven: 'Maven-3.6.3') {
+    withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.3') {
      sh 'mvn clean compile'
      } 
    }
    stage('UnitTest run') {
-    withMaven(jdk: 'JDK', maven: 'Maven-3.6.3') {
+    withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.3') {
      sh 'mvn test'
      }   
    }
    stage('Code Quality') {
-     withMaven(jdk: 'JDK', maven: 'Maven-3.6.3') {
+     withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.3') {
      sh 'mvn sonar:sonar \
   -Dsonar.projectKey=hareesh66666 \
   -Dsonar.organization=hareesh66666 \
@@ -24,7 +24,7 @@ git 'https://github.com/Hareesh6666/maven-examples.git'
       
    }
    stage('Archival repo') {
-    withMaven(jdk: 'JDK', maven: 'Maven-3.6.3') {
+    withMaven(jdk: 'JDK', maven: 'Apache Maven 3.6.3') {
      sh 'mvn package'
      }   
    }
